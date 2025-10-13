@@ -10,7 +10,7 @@ public class Hammer : MonoBehaviour
     void OnTriggerEnter2d(Collider2D other)
     {
         IHittable hittable = other.gameObject.GetComponent<IHittable>();
-        if (hittable)
+        if (hittable != null)
         {
             //highlight whackable nail here
             _hoveredHittable = hittable;
