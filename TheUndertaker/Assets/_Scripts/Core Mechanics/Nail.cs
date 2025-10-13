@@ -11,7 +11,7 @@ public class Nail : MonoBehaviour, IHittable
 
     public void Hit()
     {
-        Debug.Log("Nail has been hit");
+        UnityEngine.Debug.Log("Nail has been hit");
         if (_nailLevel > 0)
             _nailLevel--;
     }
