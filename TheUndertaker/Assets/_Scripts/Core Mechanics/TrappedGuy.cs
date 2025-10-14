@@ -44,6 +44,7 @@ public class TrappedGuy : MonoBehaviour
         if (_screamTimer <= 0f)
         {
             //AudioManager.Instance.PlayRandomSound(_screamsSFX);
+            //Maybe Shake the coffin here as well
             _screamTimer = GetNewTimer(_minScreamWait, _maxScreamWait);
         }
     }

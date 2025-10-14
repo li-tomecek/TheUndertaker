@@ -20,7 +20,7 @@ public class Coffin : MonoBehaviour
         if(_boardsRemoved >= BOARDS_TO_LOSE){
             //GAME IS LOST!!!!!!
             //Swap to GameOver Scene here (or do it through a game manager)
-            //Remove or DOTWeen move the lid sprite
+            //Remove or DOTWeen move the lid sprite (Disable the hammer first, then DOTween, then open new scene)
             Debug.Log("~~~ GAME LOST ~~~");
         }  
     }

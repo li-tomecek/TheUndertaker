@@ -20,6 +20,12 @@ public class Hammer : MonoBehaviour
         _boundsMax = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
     }
 
+    void OnDisable()
+    {
+        //InputHandler.Instance.NewMovement.RemoveListener(SetDirectionalInput);
+        //InputHandler.Instance.ButtonPressed.RemoveListener(TryHit);
+    }
+
     void FixedUpdate()
     {
         UpdatePosition();

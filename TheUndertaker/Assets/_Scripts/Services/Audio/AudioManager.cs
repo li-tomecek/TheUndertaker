@@ -19,7 +19,8 @@ public class AudioManager : Singleton<AudioManager>
     private void Start()
     {
         //LoadVolume();
-        PlayMusic(defaultMusic);
+        if(defaultMusic != null)
+            PlayMusic(defaultMusic);
     }
 
     #region Volume
