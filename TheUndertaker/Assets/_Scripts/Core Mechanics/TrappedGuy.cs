@@ -51,8 +51,9 @@ public class TrappedGuy : MonoBehaviour
             
             AudioManager.Instance.PlayRandomSound(_unusedScreams, out SFX clip);
             _unusedScreams.Remove(clip);
-            
+
             //Maybe Shake the coffin here as well
+            gameObject.GetComponent<ObjectShaker>().Shake();
             _screamTimer = GetNewTimer(_minScreamWait, _maxScreamWait);
         }
     }

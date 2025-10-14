@@ -694,7 +694,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 220, y: 130}
+  m_SizeDelta: {x: 250, y: 130}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1111490591
 MonoBehaviour:
@@ -1056,7 +1056,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 640266301575322239, guid: 13229719afd758a42914a0150fabd198, type: 3}
   m_PrefabInstance: {fileID: 7483328371695223262}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1746202662
+--- !u!114 &1746202665
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1065,30 +1065,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1746202659}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29d47720f86876049bec44849183bb96, type: 3}
+  m_Script: {fileID: 11500000, guid: 52cebe2df7047554fb40ee53af53b035, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minScreamWait: 5
-  _maxScreamWait: 10
-  _screamsSFX:
-  - {fileID: 11400000, guid: 9640ef40208ea634bb62e8ed7692cbcd, type: 2}
-  - {fileID: 11400000, guid: 09727a469dd925f4da7502a23fffe743, type: 2}
-  - {fileID: 11400000, guid: f4c35ff399868f041b0275a1323e63f2, type: 2}
-  - {fileID: 11400000, guid: bcb0e7dfbae0a1841a1528d247b4772e, type: 2}
-  - {fileID: 11400000, guid: 4d9ed84edc0cea6488087b76fd2f1e80, type: 2}
-  - {fileID: 11400000, guid: 1bf1453098ea09b49b94ecb701ba13f5, type: 2}
-  - {fileID: 11400000, guid: 11a5de3b187c454439479bcf2dd694f6, type: 2}
-  - {fileID: 11400000, guid: 31e2d4de9bdecc94ea20c0b333d19fd1, type: 2}
-  - {fileID: 11400000, guid: 7528e42ffc8f7ad40b305a41cd8465d0, type: 2}
-  - {fileID: 11400000, guid: 69a4ddbd6e5720a409a7c2c4e9e879c2, type: 2}
-  - {fileID: 11400000, guid: 36bdab9cc22c6b94bbab4ef75d28e0d6, type: 2}
-  - {fileID: 11400000, guid: 22609200b50c5e045b6ebabe9e4dd3df, type: 2}
-  - {fileID: 11400000, guid: 02da308e131ab6a49b05107ed5e2907a, type: 2}
-  - {fileID: 11400000, guid: 0f726234cbcbd3547b85a98e46f7e161, type: 2}
-  - {fileID: 11400000, guid: 37047a8733de9924f9f8b8299cd5e843, type: 2}
-  - {fileID: 11400000, guid: 7e8482157eed75a47960855772a19a68, type: 2}
-  _minTimeBetweenPops: 1
-  _maxTimeBetweenPops: 3
+  _defaultDuration: 1.2
+  _defaultStrength: 0.125
+  _defaultRandomness: 90
+  _defaultVibrato: 20
+  _minVibrato: 7
+  _maxVibrato: 17
 --- !u!1001 &7483328371695223262
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1147,7 +1132,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 640266301575322239, guid: 13229719afd758a42914a0150fabd198, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1746202662}
+      addedObject: {fileID: 1746202665}
   m_SourcePrefab: {fileID: 100100000, guid: 13229719afd758a42914a0150fabd198, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
