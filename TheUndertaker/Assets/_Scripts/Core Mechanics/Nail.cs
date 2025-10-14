@@ -11,8 +11,35 @@ public class Nail : MonoBehaviour, IHittable
 
     public void Hit()
     {
-        Debug.Log("Nail has been hit");
+        UnityEngine.Debug.Log("Nail has been hit");
         if (_nailLevel > 0)
             _nailLevel--;
     }
+
+    #region Trigger Enter/Exit
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Hammer hammer = other.gameObject.GetComponent<Hammer>();
+
+        if (hammer != null)
+        {
+            //highlight whackable nail here
+
+            hammer.SetHittable(this);
+        }
+    }
+    
+    void OnTriggerExit2D(Collider2D other)
+    {
+        Hammer hammer = other.gameObject.GetComponent<Hammer>();
+
+        if (hammer != null)
+        {
+            //stop highlight here
+            
+            hammer.SetHittable(null);       //this may work short-term but may cause problems if there are overlapping hittables!
+        }
+    }
+
+    #endregion
 }
