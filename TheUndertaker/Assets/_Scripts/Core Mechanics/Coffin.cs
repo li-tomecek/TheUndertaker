@@ -19,8 +19,9 @@ public class Coffin : MonoBehaviour
         _boardsRemoved++;
         if(_boardsRemoved >= BOARDS_TO_LOSE){
             //GAME IS LOST!!!!!!
-            //Swap to GameOver Scene here (or do it though a game manager)
+            //Swap to GameOver Scene here (or do it through a game manager)
             //Remove or DOTWeen move the lid sprite
+            Debug.Log("~~~ GAME LOST ~~~");
         }  
     }
 }

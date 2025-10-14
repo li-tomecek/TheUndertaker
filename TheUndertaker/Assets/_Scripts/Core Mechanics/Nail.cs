@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -18,28 +17,36 @@ public class Nail : MonoBehaviour, IHittable
     [SerializeField] Sprite _levelTop;
     [SerializeField] GameObject _highlight;
 
-    public UnityEvent NailPopped = new UnityEvent();
+    public UnityEvent<Nail> NailPopped = new UnityEvent<Nail>();
+
+    void Start()
+    {
+        ChangeNailSprite();
+    }
+
 
     public void Hit()
     {
         UnityEngine.Debug.Log("Nail has been hit");
         if (_nailLevel > 0)
             _nailLevel--;
-        
+
         ChangeNailSprite();
     }
 
 
-    private void PopUp()
+    public void PopUp()
     {
         _nailLevel++;
-        ChangeNailSprite();
 
-        if(_nailLevel >= _numOfNailStates){
+        if (_nailLevel >= _numOfNailStates)
+        {
             IsPopped = true;
             _highlight.SetActive(false);
-            NailPopped?.Invoke();
+            NailPopped?.Invoke(this);
         }
+        
+        ChangeNailSprite();
     }
 
     private void ChangeNailSprite()
@@ -55,7 +62,7 @@ public class Nail : MonoBehaviour, IHittable
                 _spriteRenderer.sprite = _levelTop;
                 break;
             default:
-                _spriteRenderer.enabled = false;
+                this.gameObject.SetActive(false);
                 break;
         }
     }
@@ -63,6 +70,7 @@ public class Nail : MonoBehaviour, IHittable
     #region Trigger Enter/Exit
     void OnTriggerEnter2D(Collider2D other)
     {
+        if (IsPopped) return;
         Hammer hammer = other.gameObject.GetComponent<Hammer>();
 
         if (hammer != null)
@@ -74,6 +82,7 @@ public class Nail : MonoBehaviour, IHittable
     
     void OnTriggerExit2D(Collider2D other)
     {
+        if (IsPopped) return;
         Hammer hammer = other.gameObject.GetComponent<Hammer>();
 
         if (hammer != null)

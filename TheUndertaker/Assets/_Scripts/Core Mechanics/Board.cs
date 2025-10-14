@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class Board : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class Board : MonoBehaviour
     void Start()
     {
         foreach(Nail nail in _nails){
-            nail.NailPopped.AddListener(CheckForBoardRemoval);
+            nail.NailPopped.AddListener((val) => CheckForBoardRemoval());
         }
     }
 
@@ -25,6 +26,7 @@ public class Board : MonoBehaviour
             IsBoardRemoved = true;
             BoardRemoved?.Invoke();
             //Hide board sprite, make sound
+            this.gameObject.SetActive(false);
         }
     }
 

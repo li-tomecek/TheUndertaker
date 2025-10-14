@@ -50,5 +50,8 @@ TagManager:
   - name: Nail
     uniqueID: 3845164479
     locked: 0
+  - name: Hammer
+    uniqueID: 417188489
+    locked: 0
   m_RenderingLayers:
   - Default
