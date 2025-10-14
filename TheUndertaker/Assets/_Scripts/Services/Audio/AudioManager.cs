@@ -62,6 +62,12 @@ public class AudioManager : Singleton<AudioManager>
         {
             PlaySound(listOfSFX[Random.Range(0, listOfSFX.Count - 1)]);
         }
+        
+        public void PlayRandomSound(List<SFX> listOfSFX, out SFX clip)
+        {
+            clip = listOfSFX[Random.Range(0, listOfSFX.Count - 1)];
+            PlaySound(clip);
+        }
     #endregion
 
     private void SetupSource(ref AudioSource source, SFX sfx)

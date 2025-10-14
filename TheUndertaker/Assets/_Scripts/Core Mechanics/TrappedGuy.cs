@@ -9,6 +9,7 @@ public class TrappedGuy : MonoBehaviour
     [SerializeField] float _minScreamWait = 5f;
     [SerializeField] float _maxScreamWait = 10f;
     [SerializeField] List<SFX> _screamsSFX = new List<SFX>();
+    List<SFX> _unusedScreams = new List<SFX>();
 
     [Header("Nail Popping")]
     [SerializeField] float _minTimeBetweenPops = 1f;
@@ -23,11 +24,13 @@ public class TrappedGuy : MonoBehaviour
         _screamTimer = GetNewTimer(_minScreamWait, _maxScreamWait);
 
         _nails = FindObjectsByType<Nail>(FindObjectsSortMode.None).ToList();   //probably should get this from coffin instead but good for now
-        
-        foreach(Nail nail in _nails)
+
+        foreach (Nail nail in _nails)
         {
             nail.NailPopped.AddListener((val) => _nails.Remove(val));
         }
+
+        _unusedScreams.AddRange(_screamsSFX);
     }
 
     private void Update()
@@ -43,7 +46,12 @@ public class TrappedGuy : MonoBehaviour
 
         if (_screamTimer <= 0f)
         {
-            //AudioManager.Instance.PlayRandomSound(_screamsSFX);
+            if (_unusedScreams.Count == 0)
+                _unusedScreams.AddRange(_screamsSFX);
+            
+            AudioManager.Instance.PlayRandomSound(_unusedScreams, out SFX clip);
+            _unusedScreams.Remove(clip);
+            
             //Maybe Shake the coffin here as well
             _screamTimer = GetNewTimer(_minScreamWait, _maxScreamWait);
         }
