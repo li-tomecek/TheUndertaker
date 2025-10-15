@@ -11,6 +11,7 @@ public class LevelManager : Singleton<LevelManager>//, ISaveable
     private const string PERSISTENT_SCENE_NAME = "Persistent_Scene";
     private const int MAIN_MENU_SCENE_INDEX = 1;
     private const int PLAYABLE_LEVEL_INDEX = 2;
+    private const int END_LEVEL_INDEX = 3;
 
     #endregion
 
@@ -47,6 +48,12 @@ public class LevelManager : Singleton<LevelManager>//, ISaveable
     {
         LoadLevel(PLAYABLE_LEVEL_INDEX);
     }
+
+    public void LoadResultsScene()
+    {
+        LoadLevel(END_LEVEL_INDEX);
+    }
+
 
     #endregion
 }
