@@ -19,7 +19,8 @@ public class AudioManager : Singleton<AudioManager>
     private void Start()
     {
         //LoadVolume();
-        PlayMusic(defaultMusic);
+        if(defaultMusic != null)
+            PlayMusic(defaultMusic);
     }
 
     #region Volume
@@ -60,6 +61,12 @@ public class AudioManager : Singleton<AudioManager>
         public void PlayRandomSound(List<SFX> listOfSFX)
         {
             PlaySound(listOfSFX[Random.Range(0, listOfSFX.Count - 1)]);
+        }
+        
+        public void PlayRandomSound(List<SFX> listOfSFX, out SFX clip)
+        {
+            clip = listOfSFX[Random.Range(0, listOfSFX.Count - 1)];
+            PlaySound(clip);
         }
     #endregion
 

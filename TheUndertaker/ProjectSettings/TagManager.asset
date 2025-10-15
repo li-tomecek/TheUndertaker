@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
+  serializedVersion: 3
   tags: []
   layers:
   - Default
@@ -41,3 +41,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Coffin
+    uniqueID: 2842553035
+    locked: 0
+  - name: Board
+    uniqueID: 863474017
+    locked: 0
+  - name: Nail
+    uniqueID: 3845164479
+    locked: 0
+  - name: Hammer
+    uniqueID: 417188489
+    locked: 0
+  m_RenderingLayers:
+  - Default
