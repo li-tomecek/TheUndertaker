@@ -11,13 +11,15 @@ public class MainMenu : MonoBehaviour
 
     void Start()
     {
-        _menuButtonSelect = () => EventSystem.current.currentSelectedGameObject.GetComponent<Button>()?.onClick.Invoke();
         _startButton.Select();
+        _menuButtonSelect = () => EventSystem.current.currentSelectedGameObject.GetComponent<Button>()?.onClick.Invoke();
         InputHandler.Instance.ButtonPressed.AddListener(_menuButtonSelect);
+        //InputHandler.Instance.NewMovement.AddListener((val) => ToggleSelectedButton());     //Not sure I need this but just in case.
     }
     void OnDisable()
     {
         InputHandler.Instance.ButtonPressed.RemoveListener(_menuButtonSelect);
+        //InputHandler.Instance.NewMovement.RemoveListener((val) => ToggleSelectedButton());
     }
 
     public void StartGame()
@@ -29,4 +31,13 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    // public void ToggleSelectedButton()  //THIS IS CAUSING ISSUES
+    // {
+    //     Button btn = EventSystem.current.currentSelectedGameObject.GetComponent<Button>();
+    //     if(btn == null)
+    //     {
+    //         _startButton.Select();
+    //     } 
+    // }
 }

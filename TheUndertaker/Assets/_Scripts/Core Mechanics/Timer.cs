@@ -18,7 +18,8 @@ public class Timer : MonoBehaviour
         if(_gameTimer <= 0)
         {
             //GAME WON!
-            Debug.Log(" ~~~ GAME WON! ~~~");
+            GameManager.Instance.OpenWinScreen();
+            //Debug.Log(" ~~~ GAME WON! ~~~");
         }
     }
 }
