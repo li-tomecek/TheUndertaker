@@ -94,9 +94,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _numOfNailStates: 3
   _spriteRenderer: {fileID: 9010590981323146712}
-  _levelBottom: {fileID: 21300000, guid: 4fe99e4ba73749649bf45f4620a01875, type: 3}
-  _levelMiddle: {fileID: 21300000, guid: 65ee535e0e034c14dbcdbb895f426654, type: 3}
-  _levelTop: {fileID: 21300000, guid: ac4bae8095276634789909c71e762aab, type: 3}
+  _levelBottom: {fileID: 21300000, guid: 760b34e654299464e9ac5e309e4dcb6f, type: 3}
+  _levelMiddle: {fileID: 21300000, guid: cfadd9b8b749c46458cbca5f7191923e, type: 3}
+  _levelTop: {fileID: 21300000, guid: 1c62c04a1c8cbfe4894ee230b5490ff2, type: 3}
   _highlight: {fileID: 7485390269226445251}
   NailPopped:
     m_PersistentCalls:
@@ -178,7 +178,7 @@ SpriteRenderer:
   m_SortingLayerID: -449802817
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 4fe99e4ba73749649bf45f4620a01875, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 760b34e654299464e9ac5e309e4dcb6f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
