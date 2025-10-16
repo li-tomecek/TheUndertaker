@@ -24,6 +24,8 @@ public class ResultsMenu : MonoBehaviour
             FadeIn(_loseScreen);
 
         if (EventSystem.current == null) Debug.Log("no event system...");
+
+         _mainMenuBtn.Select();
         _menuButtonSelect = () => EventSystem.current.currentSelectedGameObject?.GetComponent<Button>()?.onClick.Invoke();
         InputHandler.Instance.ButtonPressed.AddListener(_menuButtonSelect);
     }
