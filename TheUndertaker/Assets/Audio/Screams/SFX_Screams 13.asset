@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SFX_Screams 13
   m_EditorClassIdentifier: 
   <Clip>k__BackingField: {fileID: 8300000, guid: f211ffff5c2d2ab4f8ea873df9bac10e, type: 3}
-  <Volume>k__BackingField: 1
-  <Pitch>k__BackingField: 1
+  <Volume>k__BackingField: 0.5
+  <Pitch>k__BackingField: 0.95

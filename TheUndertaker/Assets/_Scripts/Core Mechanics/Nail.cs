@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,6 +10,8 @@ public class Nail : MonoBehaviour, IHittable
     private int _nailLevel;                         //0: hammered all the way in
     public bool IsPopped { get; private set; }                 //Has the nail been papped out of the coffin (not hittable)
     [SerializeField] SFX _nailPopSFX;
+    [SerializeField] List<SFX> _hammerSFX = new List<SFX>();
+
 
 
     [Header("Nail State Sprites")]
@@ -29,6 +32,7 @@ public class Nail : MonoBehaviour, IHittable
     public void Hit()
     {
         UnityEngine.Debug.Log("Nail has been hit");
+        AudioManager.Instance.PlayRandomSound(_hammerSFX);
         if (_nailLevel > 0)
             _nailLevel--;
 

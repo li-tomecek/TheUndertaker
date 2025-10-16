@@ -9,16 +9,17 @@ public class MainMenu : MonoBehaviour
 
     private UnityAction _menuButtonSelect;
 
-    void Start()
+    void OnEnable()
     {
         _startButton.Select();
-        _menuButtonSelect = () => EventSystem.current.currentSelectedGameObject.GetComponent<Button>()?.onClick.Invoke();
+        if (EventSystem.current == null) Debug.Log("no event system...");
+        _menuButtonSelect = () => EventSystem.current.currentSelectedGameObject?.GetComponent<Button>()?.onClick.Invoke();
         InputHandler.Instance.ButtonPressed.AddListener(_menuButtonSelect);
         //InputHandler.Instance.NewMovement.AddListener((val) => ToggleSelectedButton());     //Not sure I need this but just in case.
     }
     void OnDisable()
     {
-        InputHandler.Instance.ButtonPressed.RemoveListener(_menuButtonSelect);
+        ///InputHandler.Instance.ButtonPressed.RemoveListener(_menuButtonSelect);
         //InputHandler.Instance.NewMovement.RemoveListener((val) => ToggleSelectedButton());
     }
 

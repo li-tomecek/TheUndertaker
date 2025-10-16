@@ -13,7 +13,7 @@ public class ResultsMenu : MonoBehaviour
 
     private UnityAction _menuButtonSelect;
 
-    void Start()
+    void OnEnable()
     {
         _winScreen.alpha = 0;
         _loseScreen.alpha = 0;
@@ -23,7 +23,8 @@ public class ResultsMenu : MonoBehaviour
         else
             FadeIn(_loseScreen);
 
-        _menuButtonSelect = () => EventSystem.current.currentSelectedGameObject.GetComponent<Button>()?.onClick.Invoke();
+        if (EventSystem.current == null) Debug.Log("no event system...");
+        _menuButtonSelect = () => EventSystem.current.currentSelectedGameObject?.GetComponent<Button>()?.onClick.Invoke();
         InputHandler.Instance.ButtonPressed.AddListener(_menuButtonSelect);
     }
     

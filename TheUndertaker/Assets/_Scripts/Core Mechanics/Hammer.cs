@@ -14,7 +14,7 @@ public class Hammer : MonoBehaviour
     private Vector2 _directionalInput, _newPosition;
     private Vector2 _boundsMin, _boundsMax;
 
-    void Start()
+    void OnEnable()
     {
         InputHandler.Instance.NewMovement.AddListener(SetDirectionalInput);
         InputHandler.Instance.ButtonPressed.AddListener(TryHit);
@@ -45,7 +45,8 @@ public class Hammer : MonoBehaviour
 
         //play whoose/swing sound effect
         _hoveredHittable?.Hit();
-        AudioManager.Instance.PlaySound(_whooshSFX);
+        if(_hoveredHittable == null)
+            AudioManager.Instance.PlaySound(_whooshSFX);
 
 
     }

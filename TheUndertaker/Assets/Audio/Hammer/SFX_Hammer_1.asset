@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 686453d5b616306488ae8c4419940b10, type: 3}
-  m_Name: SFX_Screams 3
+  m_Name: SFX_Hammer_1
   m_EditorClassIdentifier: 
-  <Clip>k__BackingField: {fileID: 8300000, guid: 7793b15b813818348b0bb55f18c16438, type: 3}
-  <Volume>k__BackingField: 0.5
-  <Pitch>k__BackingField: 0.95
+  <Clip>k__BackingField: {fileID: 8300000, guid: 9e81c132654f8d945a65dbfb0691b170, type: 3}
+  <Volume>k__BackingField: 0.2
+  <Pitch>k__BackingField: 1
