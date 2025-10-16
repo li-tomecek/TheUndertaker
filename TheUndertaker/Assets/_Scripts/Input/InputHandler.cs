@@ -26,7 +26,7 @@ public class InputHandler : Singleton<InputHandler>
         _gameInputs.Atari.Move.performed += (val) => NewMovement?.Invoke(val.ReadValue<Vector2>());
         _gameInputs.Atari.Move.canceled += (val) => NewMovement?.Invoke(Vector2.zero);
 
-        //LockCursor();
+        LockCursor();
     }
 
     private void OnDestroy()

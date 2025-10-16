@@ -15,11 +15,18 @@ public class MainMenu : MonoBehaviour
         if (EventSystem.current == null) Debug.Log("no event system...");
         _menuButtonSelect = () => EventSystem.current.currentSelectedGameObject?.GetComponent<Button>()?.onClick.Invoke();
         InputHandler.Instance.ButtonPressed.AddListener(_menuButtonSelect);
-        //InputHandler.Instance.NewMovement.AddListener((val) => ToggleSelectedButton());     //Not sure I need this but just in case.
     }
     void OnDisable()
     {
         InputHandler.Instance.ButtonPressed.RemoveListener(_menuButtonSelect);
+    }
+
+    void Update()
+    {
+        if(EventSystem.current == null || EventSystem.current.currentSelectedGameObject == null)        ///last minute fix
+        {
+            _startButton.Select();
+        }
     }
 
     public void StartGame()

@@ -29,10 +29,18 @@ public class ResultsMenu : MonoBehaviour
         _menuButtonSelect = () => EventSystem.current.currentSelectedGameObject?.GetComponent<Button>()?.onClick.Invoke();
         InputHandler.Instance.ButtonPressed.AddListener(_menuButtonSelect);
     }
-    
+
     void OnDisable()
     {
         InputHandler.Instance.ButtonPressed.RemoveListener(_menuButtonSelect);
+    }
+    
+    void Update()
+    {
+        if(EventSystem.current == null || EventSystem.current.currentSelectedGameObject == null)        ///last minute fix
+        {
+            _mainMenuBtn.Select();
+        }
     }
     
     public void FadeIn(CanvasGroup canvasGroup)
