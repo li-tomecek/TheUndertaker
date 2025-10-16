@@ -8,6 +8,8 @@ public class Hammer : MonoBehaviour
     [SerializeField] float _movementSpeed = 10f;      //multiplier to input handling
     private IHittable _hoveredHittable;
 
+    [SerializeField] Animator _animator;
+
     private Vector2 _directionalInput, _newPosition;
     private Vector2 _boundsMin, _boundsMax;
 
@@ -38,6 +40,7 @@ public class Hammer : MonoBehaviour
     public void TryHit()
     {
         //play "hitting" animation, even if there is nothing to hit
+        _animator.SetTrigger("PlayHammerOnce");
 
         //play whoose/swing sound effect
 
