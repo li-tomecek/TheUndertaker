@@ -7,7 +7,8 @@ public class Nail : MonoBehaviour, IHittable
     //will need reference to all sprite states?
     [SerializeField] int _numOfNailStates = 3;      //at this level, the nail is considered "popped out"
     private int _nailLevel;                         //0: hammered all the way in
-    public bool IsPopped {get; private set;}                 //Has the nail been papped out of the coffin (not hittable)
+    public bool IsPopped { get; private set; }                 //Has the nail been papped out of the coffin (not hittable)
+    [SerializeField] SFX _nailPopSFX;
 
 
     [Header("Nail State Sprites")]
@@ -38,6 +39,7 @@ public class Nail : MonoBehaviour, IHittable
     public void PopUp()
     {
         _nailLevel++;
+        AudioManager.Instance.PlaySound(_nailPopSFX);
 
         if (_nailLevel >= _numOfNailStates)
         {

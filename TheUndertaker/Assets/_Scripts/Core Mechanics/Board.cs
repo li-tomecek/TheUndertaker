@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 public class Board : MonoBehaviour
 {
     [SerializeField] List<Nail> _nails = new List<Nail>();
+    [SerializeField] SFX _boardBreakSFX;
     private int _nailsPopped;
     
     public bool IsBoardRemoved {get; private set;}
@@ -24,9 +25,9 @@ public class Board : MonoBehaviour
         if(_nailsPopped >= _nails.Count)
         {
             IsBoardRemoved = true;
-            BoardRemoved?.Invoke();
-            //Hide board sprite, make sound
             this.gameObject.SetActive(false);
+            AudioManager.Instance.PlaySound(_boardBreakSFX);
+            BoardRemoved?.Invoke();
         }
     }
 

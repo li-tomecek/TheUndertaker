@@ -17,7 +17,7 @@ public class ResultsMenu : MonoBehaviour
     {
         _winScreen.alpha = 0;
         _loseScreen.alpha = 0;
-        _mainMenuBtn.gameObject.SetActive(false);
+        //_mainMenuBtn.gameObject.SetActive(false);
         if (GameManager.Instance.GameWon)
             FadeIn(_winScreen);
         else
@@ -29,12 +29,12 @@ public class ResultsMenu : MonoBehaviour
     
     void OnDisable()
     {
-        InputHandler.Instance.ButtonPressed.RemoveListener(_menuButtonSelect);
+        //InputHandler.Instance.ButtonPressed.RemoveListener(_menuButtonSelect);
     }
     
     public void FadeIn(CanvasGroup canvasGroup)
     {
-        canvasGroup.DOFade(1, _fadeInTime).OnComplete(() => { _mainMenuBtn.gameObject.SetActive(true);  _mainMenuBtn.Select(); });
+        canvasGroup.DOFade(1f, _fadeInTime).OnComplete(() => { _mainMenuBtn.gameObject.SetActive(true);  _mainMenuBtn.Select(); });
     }
 
     public void ReturnToMainMenu()

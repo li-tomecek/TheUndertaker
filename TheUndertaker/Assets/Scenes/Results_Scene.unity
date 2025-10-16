@@ -717,7 +717,7 @@ MonoBehaviour:
   _winScreen: {fileID: 423101094}
   _loseScreen: {fileID: 850528458}
   _mainMenuBtn: {fileID: 2031991619}
-  _fadeInTime: 3
+  _fadeInTime: 10
 --- !u!1 &1724664653
 GameObject:
   m_ObjectHideFlags: 0
@@ -1024,8 +1024,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5, y: 157}
-  m_SizeDelta: {x: 1000, y: 300}
+  m_AnchoredPosition: {x: 5, y: 125}
+  m_SizeDelta: {x: 1500, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1989307048
 MonoBehaviour:
@@ -1074,8 +1074,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 102
-  m_fontSizeBase: 102
+  m_fontSize: 156
+  m_fontSizeBase: 156
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

@@ -9,6 +9,7 @@ public class Hammer : MonoBehaviour
     private IHittable _hoveredHittable;
 
     [SerializeField] Animator _animator;
+    [SerializeField] SFX _whooshSFX;
 
     private Vector2 _directionalInput, _newPosition;
     private Vector2 _boundsMin, _boundsMax;
@@ -43,9 +44,10 @@ public class Hammer : MonoBehaviour
         _animator.SetTrigger("PlayHammerOnce");
 
         //play whoose/swing sound effect
-
         _hoveredHittable?.Hit();
-        UnityEngine.Debug.Log("Tried to hit");
+        AudioManager.Instance.PlaySound(_whooshSFX);
+
+
     }
     private void SetDirectionalInput(Vector2 input)
     {

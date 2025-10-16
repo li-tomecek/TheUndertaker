@@ -93,6 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _numOfNailStates: 3
+  _nailPopSFX: {fileID: 11400000, guid: 7ff5217742921814aa1a8ce42a1ac2f2, type: 2}
   _spriteRenderer: {fileID: 9010590981323146712}
   _levelBottom: {fileID: 21300000, guid: 760b34e654299464e9ac5e309e4dcb6f, type: 3}
   _levelMiddle: {fileID: 21300000, guid: cfadd9b8b749c46458cbca5f7191923e, type: 3}

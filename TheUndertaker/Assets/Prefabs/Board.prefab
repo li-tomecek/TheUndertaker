@@ -49,6 +49,7 @@ MonoBehaviour:
   _nails:
   - {fileID: 700543454272723403}
   - {fileID: 5042055544127915391}
+  _boardBreakSFX: {fileID: 11400000, guid: 2b20fabeb680e1d4f8de6cab8d06aacc, type: 2}
   BoardRemoved:
     m_PersistentCalls:
       m_Calls: []
