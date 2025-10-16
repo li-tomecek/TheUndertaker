@@ -19,8 +19,7 @@ public class MainMenu : MonoBehaviour
     }
     void OnDisable()
     {
-        ///InputHandler.Instance.ButtonPressed.RemoveListener(_menuButtonSelect);
-        //InputHandler.Instance.NewMovement.RemoveListener((val) => ToggleSelectedButton());
+        InputHandler.Instance.ButtonPressed.RemoveListener(_menuButtonSelect);
     }
 
     public void StartGame()
